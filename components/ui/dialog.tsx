@@ -7,12 +7,10 @@ import { cn } from "@/lib/utils";
 const Dialog = DialogPrimitive.Root;
 const DialogTrigger = DialogPrimitive.Trigger;
 
-// Custom interface to include className
 interface CustomDialogPortalProps extends DialogPrimitive.DialogPortalProps {
   containerProps?: { className?: string; [key: string]: any };
 }
 
-// DialogPortal modified to use containerProps for className
 const DialogPortal = ({
   containerProps,
   children,
@@ -22,6 +20,7 @@ const DialogPortal = ({
     <div {...containerProps}>{children}</div>
   </DialogPrimitive.Portal>
 );
+DialogPortal.displayName = "DialogPortal";
 
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
@@ -31,11 +30,12 @@ const DialogOverlay = React.forwardRef<
     {...props}
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state:closed]:fade-out-0 data-[state=open]:fade-in-0",
       className
     )}
   />
 ));
+DialogOverlay.displayName = "DialogOverlay";
 
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
@@ -47,7 +47,7 @@ const DialogContent = React.forwardRef<
       {...props}
       ref={ref}
       className={cn(
-        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg md:w-full",
+        "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state:closed]:fade-out-0 data-[state=open]:fade-in-0",
         className
       )}
     >
@@ -59,6 +59,7 @@ const DialogContent = React.forwardRef<
     </DialogPrimitive.Content>
   </DialogPortal>
 ));
+DialogContent.displayName = "DialogContent";
 
 const DialogHeader = ({
   className,
@@ -72,6 +73,7 @@ const DialogHeader = ({
     {...props}
   />
 );
+DialogHeader.displayName = "DialogHeader";
 
 const DialogFooter = ({
   className,
@@ -85,6 +87,7 @@ const DialogFooter = ({
     {...props}
   />
 );
+DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,
@@ -99,6 +102,7 @@ const DialogTitle = React.forwardRef<
     {...props}
   />
 ));
+DialogTitle.displayName = "DialogTitle";
 
 const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
@@ -110,6 +114,7 @@ const DialogDescription = React.forwardRef<
     {...props}
   />
 ));
+DialogDescription.displayName = "DialogDescription";
 
 export {
   Dialog,
