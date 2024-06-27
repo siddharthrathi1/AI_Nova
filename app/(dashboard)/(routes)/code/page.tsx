@@ -67,9 +67,7 @@ const CodePage = () => {
         iconColor="text-green-700"
         bgColor="bg-green-700/10"
       />
-      <p className="mx-8 my-2 text-sm text-red-600">
-       <b>Note:</b> Conversation and Code generation is not working anymore as the OpenAI api usage limit has been exhausted!!😞
-      </p>
+     
       <div className="px-4 lg:px-8">
         <div>
           <Form {...form}>
