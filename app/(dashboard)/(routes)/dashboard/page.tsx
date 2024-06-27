@@ -21,7 +21,7 @@ export default function HomePage() {
           Chat with the smartest AI - Experience the power of AI
         </p>
         <p className="mx-8 my-2 text-sm text-red-600">
-       <b>Note:</b> Conversation and Code generation is not working anymore as the OpenAI api usage limit has been exhausted!!😞
+       <b>Note:</b> Any generation is not working anymore as the OpenAI api usage limit has been exhausted!!😞
       </p>
       </div>
       <div className="px-4 md:px-20 lg:px-32 space-y-4">
